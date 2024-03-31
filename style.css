@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    width: 100%;
+    box-sizing: border-box;
+}
+#container{
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+/* .content-container{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+} */
+.gender-class{
+    margin-left: auto;
+    border-top-right-radius: 10px;
+    vertical-align: middle;
+    padding-top: 10px;
+    text-align: center;
+    height: 27px;
+    width: 50px;
+    color: white;
+    background-color: rgb(227, 13, 134);
+}
+.shirt-catalogue{
+    text-align: center;
+    border-radius: 10px;
+    max-width: 490px;
+    height: 560px;
+    margin: 20px;
+    background-color: white;
+}
+.shirt-image{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.shirt-infobar{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.shirt-name{
+    text-align: left;
+    font-size: 18px;
+    width: 65%;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.stock-status{
+    font-size: 15px;
+    text-align: center;
+    width: 20%;
+    color: white;
+    margin-top: -5px;
+    margin-left: 10px;
+    background-color: red;
+    padding: 5px;
+    border-radius: 15px;
+}
+.rating{
+    width: 15%;
+    margin-left: 15px;
+}
+.shirt-category{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.color-size-stock{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+.size-select{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+}
+.large-size,.medium-size,.small-size{
+    margin-left: 20px;
+}
+.green-color,.black-color,.red-color,.pink-color{
+    margin-right: 20px;
+}
+.available-stock{
+    font-size: 13px;
+    font-weight: bold;
+    color: aqua;
+    width: 20%;
+}
+.color-select{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin-left: 27px;
+}
+.color-circles{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 50%;
+}
+.price-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+.original-price{
+    margin-right: 20px;
+    position: relative;
+}
+.original-price::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 35%;
+}
+.discounted-price{
+    margin-right: 20px;
+}
+.discount-percentage{
+    color: rgb(204, 19, 19);
+}
+ion-icon{
+    color: rgb(255, 255, 8);
+}
