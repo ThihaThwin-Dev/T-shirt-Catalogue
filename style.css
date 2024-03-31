@@ -33,9 +33,12 @@ body{
     text-align: center;
     border-radius: 10px;
     max-width: 490px;
-    height: 560px;
+    height: 580px;
     margin: 20px;
     background-color: white;
+}
+.shirt-container{
+    height: 370px;
 }
 .shirt-image{
     width: 50%;

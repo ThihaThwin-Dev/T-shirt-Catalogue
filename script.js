@@ -8,7 +8,7 @@ const products = [
     pPrice: 40000,
     pDiscount: 100,
     pRate: 5,
-    pCode: "M102",
+    pCode: "M101",
     pLsize: true,
     pMsize: true,
     pSsize: true,
@@ -73,7 +73,7 @@ function init() {
     catalogue.innerHTML += `
     <div class="shirt-catalogue">
         <p class="gender-class">F</p>
-        <img src="./M101.jpg" alt="" class="shirt-image">
+        <div class="shirt-container"><img src="${p.pCode}.jpg" alt="" class="shirt-image"></div>
         <div class="content-container">
             <div class="shirt-infobar">
                 <p class="shirt-name">${p.pName}</p>
