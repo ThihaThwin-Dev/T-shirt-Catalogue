@@ -6,7 +6,7 @@ const products = [
     pColor: ["#23ef45", "#000000", "#ff0000", "#ff00ff"],
     pCategory: "OutofStock",
     pPrice: 40000,
-    pDiscount: 100,
+    pDiscount: 200,
     pRate: 5,
     pCode: "M101",
     pLsize: true,
@@ -51,7 +51,15 @@ const products = [
     pName: "BASKETBALL TREFOIL JERSEY",
     pDes: "Men's BASKETBALL TREFOIL JERSEY",
     pGender: 1,
-    pColor: ["#2192FF", "#9CFF2E", "#FDFF00", "#38E54D"],
+    pColor: [
+      "#2192FF",
+      "#9CFF2E",
+      "#FDFF00",
+      "#38E54D",
+      "blue",
+      "aqua",
+      "orange",
+    ],
     pCategory: "Sale",
     pPrice: 40000,
     pDiscount: 20,
@@ -65,7 +73,7 @@ const products = [
   },
 ];
 
-window.onload = init()
+window.onload = init();
 
 function init() {
   let catalogue = document.getElementById("container");
@@ -101,9 +109,15 @@ function init() {
                     <div id="fifthColor" class="color-circles" style="background-color:${
                       p.pColor[4]
                     }"></div>
+                    <div id="sixthColor" class="color-circles" style="background-color:${
+                      p.pColor[5]
+                    }"></div>
+                    <div id="seventhColor" class="color-circles" style="background-color:${
+                      p.pColor[6]
+                    }"></div>
                 </div>
                 <div class="size-select">
-                    <div id="largeSize">L</div>
+                    <div id="largeSize">${p.pLsize}L</div>
                     <div id="medium-size">M</div>
                     <div id="small-size">S</div>
                 </div>
@@ -111,10 +125,10 @@ function init() {
             </div>
             <div class="price-info">
                 <div class="original-price">${p.pPrice} MMK</div>
-                <div class="discounted-price">${
-                  p.pPrice - p.pPrice * (p.pDiscount / 100)
-                } MMK</div>
-                <div class="discount-percentage">(${p.pDiscount}% off)</div>
+                <div class="discounted-price">${p.pPrice - p.pPrice * (p.pDiscount / 100)} MMK</div>
+                <div class="discount-percentage">(${discountCheck(
+                  p.pDiscount
+                ) + "% off"})</div>
             </div>
         </div>
     </div>`;
@@ -122,9 +136,15 @@ function init() {
 }
 function stockCheck(stock) {
   if (stock >= 1) {
-    return stock
+    return stock;
+  } else {
+    return "None";
   }
-  else {
-    return "None"
+}
+function discountCheck(discount) {
+  if (discount >= 1 && discount <= 100) {
+    return discount;
+  } else {
+    return "0";
   }
 }
