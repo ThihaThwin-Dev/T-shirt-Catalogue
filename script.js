@@ -12,7 +12,7 @@ const products = [
     pLsize: true,
     pMsize: true,
     pSsize: true,
-    pStock: 9,
+    pStock: 0,
     pPhoto: "M101.jpg",
   },
   {
@@ -65,43 +65,66 @@ const products = [
   },
 ];
 
-init();
+window.onload = init()
 
 function init() {
   let catalogue = document.getElementById("container");
   for (const p of products) {
-    catalogue.innerHTML += `
-    <div class="shirt-catalogue">
-        <p class="gender-class">F</p>
-        <div class="shirt-container"><img src="${p.pCode}.jpg" alt="" class="shirt-image"></div>
+    catalogue.innerHTML += `<div class="shirt-catalogue">
+        <p id="gender" class="gender-class">${p.pGender}</p>
+        <div class="shirt-container"><img src="${
+          p.pCode
+        }.jpg" alt="" class="shirt-image"></div>
         <div class="content-container">
             <div class="shirt-infobar">
                 <p class="shirt-name">${p.pName}</p>
                 <div class="stock-status">${p.pCategory}</div>
-                <div class="rating"><ion-icon name="star"></ion-icon> 5</div>
+                <div class="rating"><ion-icon name="star"></ion-icon> ${
+                  p.pRate
+                } </div>
             </div>
-            <p class="shirt-category">Women's Originals</p>
+            <p class="shirt-category">${p.pDes}</p>
             <div class="color-size-stock">
                 <div class="color-select">
-                    <div class="green-color color-circles"></div>
-                    <div class="black-color color-circles"></div>
-                    <div class="red-color color-circles"></div>
-                    <div class="pink-color color-circles"></div>
+                    <div id="firstColor" class="color-circles" style="background-color:${
+                      p.pColor[0]
+                    }"></div>
+                    <div id="secondColor" class="color-circles" style="background-color:${
+                      p.pColor[1]
+                    }"></div>
+                    <div id="thirdColor" class="color-circles" style="background-color:${
+                      p.pColor[2]
+                    }"></div>
+                    <div id="fourthColor" class="color-circles" style="background-color:${
+                      p.pColor[3]
+                    }"></div>
+                    <div id="fifthColor" class="color-circles" style="background-color:${
+                      p.pColor[4]
+                    }"></div>
                 </div>
                 <div class="size-select">
-                    <div class="large-size">L</div>
-                    <div class="medium-size">M</div>
-                    <div class="small-size">S</div>
+                    <div id="largeSize">L</div>
+                    <div id="medium-size">M</div>
+                    <div id="small-size">S</div>
                 </div>
-                <div class="available-stock">10 left</div>
+                <div class="available-stock">${stockCheck(p.pStock)} left</div>
             </div>
             <div class="price-info">
-                <div class="original-price">46,000 MMK</div>
-                <div class="discounted-price">0 MMK</div>
-                <div class="discount-percentage">(100% off)</div>
+                <div class="original-price">${p.pPrice} MMK</div>
+                <div class="discounted-price">${
+                  p.pPrice - p.pPrice * (p.pDiscount / 100)
+                } MMK</div>
+                <div class="discount-percentage">(${p.pDiscount}% off)</div>
             </div>
         </div>
-    </div>`
-    ;
+    </div>`;
+  }
+}
+function stockCheck(stock) {
+  if (stock >= 1) {
+    return stock
+  }
+  else {
+    return "None"
   }
 }

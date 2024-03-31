@@ -89,10 +89,10 @@ body{
     display: flex;
     flex-direction: row;
 }
-.large-size,.medium-size,.small-size{
+#largeSize,#medium-size,#small-size{
     margin-left: 20px;
 }
-.green-color,.black-color,.red-color,.pink-color{
+#firstColor,#secondColor,#thirdColor,#fourthColor,#fifthColor{
     margin-right: 20px;
 }
 .available-stock{
@@ -110,8 +110,6 @@ body{
 .color-circles{
     width: 20px;
     height: 20px;
-    border: 1px solid black;
-    background-color: black;
     border-radius: 50%;
 }
 .price-info{
